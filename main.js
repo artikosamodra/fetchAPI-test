@@ -24,4 +24,35 @@ const endpoint = "https://reqres.in/api/users";
 hitAPI();*/ //>>call function
 //====================================================================================
 
+// POST-METHOD using THEN.
+fetch(endpoint, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    email: "artiko@gmail.com",
+    firstname: "artiko",
+  }),
+})
+  .then((result) => result.json())
+  .then((data) => console.log(data)); //delete '{ }'. because, format post not same.
+//====================================================================================
 
+//POST-METHOD using ASYNC AWAIT
+// async function hitAPI(){
+//     const api = await fetch(endpoint, {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify({
+//             email: "artiko@gmail.com",
+//             firstname: "artiko",
+//         }),
+//     })
+//     const data = await api.json()
+//     console.log(data)
+// }
+
+// hitAPI();
